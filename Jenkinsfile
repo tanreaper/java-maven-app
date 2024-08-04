@@ -20,7 +20,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                         sh 'docker build -t tanreaper/demo-app:2.0 .'
                         sh 'docker login -u $USERNAME -p $PASSWORD'
-                        sh 'docker push'
+                        sh 'docker push tanreaper/demo-app:1.0'
                     }
                 }
 
