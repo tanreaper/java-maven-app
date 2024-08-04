@@ -6,9 +6,9 @@ def buildJar() {
 def buildImage() {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-        sh 'docker build -t nanatwn/demo-app:jma-2.0 .'
-        sh 'echo $PASS | docker login -u $USER --password-stdin'
-        sh 'docker push nanatwn/demo-app:jma-2.0'
+        sh 'docker build -t tanreaper/demo-app:1.0 .'
+        sh 'docker login -u $USERNAME -p $PASSWORD'
+        sh 'docker push tanreaper/demo-app:1.0'
     }
 }
 
